@@ -18,15 +18,15 @@ public class Product {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
         private String name;
-        private String desc;
+        private String description;
         private BigDecimal price;
         private String brand;
         private String category;
 
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
         private Date releaseDate;
-        private boolean availability;
-        private int quantity;
+        private boolean productAvailable;
+        private int stockQuantity;
 
         private String imageName;
         private String imageType;
@@ -50,12 +50,10 @@ public class Product {
         @Lob
         private byte[] imageData;
 
-        public byte[] getImageData() {
-            return imageData;
-        }
+        public byte[] getImageData() {   return imageData; }
 
         public void setImageData(byte[] imageData) {
             this.imageData = imageData;
         }
 
-    }
+}
